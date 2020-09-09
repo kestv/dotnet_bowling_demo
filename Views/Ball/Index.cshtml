@@ -1,0 +1,24 @@
+﻿@model DemoWeb.Models.BallModel.BallIndexModel
+
+<div id="balls">
+    <h3>Ball</h3>
+    <div id="ballTable">
+        <table class="table table-condensed" id="ballIndexTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ball in @Model.Balls)
+                {
+                    <tr class="ballRow">
+                        <td class="">@ball.Name</td>
+                        <td class="">@ball.Size</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

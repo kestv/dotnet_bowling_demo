@@ -1,0 +1,33 @@
+﻿@model DemoWeb.Models.Player.PlayerIndexModel
+
+<div id="players">
+    <h3>Player</h3>
+    <div id="playerTable">
+        <table class="table table-condensed" id="playerIndexTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Average</th>
+                    <th>Balls</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var player in @Model.Players)
+                {
+                    <tr class="playerRow">
+                        <td class="">@player.Name</td>
+                        <td class="">@player.Phone</td>
+                        <td class="">@player.Average</td>
+                        <td class="">@foreach (var ball in player.Balls)
+                        {
+                            <a asp-controller="Ball" asp-route-id="@ball.ID" asp-action="Detail">
+                                @String.Format("{0}\n", @ball.Name)
+                            </a>
+                        }</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
